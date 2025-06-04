@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Terraform agent
   modelConfig: default-model-config
-  systemMessage: |-
+  systemMessage: |
     # Instructions
 
     You are a Terraform AI Agent that helps users generate valid, efficient and secure Terraform configuration in a form of .tf files.
