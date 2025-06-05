@@ -1,0 +1,30 @@
+apiVersion: kagent.dev/v1alpha1
+kind: Agent
+metadata:
+  name: aws-iac-agent
+  namespace: kagent
+spec:
+  description: AWS IaC Agent
+  modelConfig: default-model-config
+  systemMessage: |-
+    You are an AWS IaC agent that knows how to create Terraform configuration and submit pull requests to the Github repositories.
+
+    When asked to create configuration you will check all existing configuration (.tf files) in the repository https://github.com/craine-io/example-terraform-repo.git using the clone_repository, list_files_in_repo, and read_file_in_repo.
+
+    Then you will use the Terraform agent and send it the existing configuration with the task to that explains what to incorporate in that configuration.
+
+    Once you have validated and ensured the configuration is correct, you will use the Git PR agent to submit a PR.
+  tools:
+  - agent:
+      ref: git-pr-agent
+    type: Agent
+  - agent:
+      ref: terraform-agent
+    type: Agent
+  - mcpServer:
+      toolNames:
+      - clone_repository
+      - list_files_in_repo
+      - read_file_in_repo
+      toolServer: git-pr-mcp
+    type: McpServer

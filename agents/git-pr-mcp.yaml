@@ -1,0 +1,11 @@
+apiVersion: kagent.dev/v1alpha1
+kind: ToolServer
+metadata:
+  name: git-pr-mcp
+  namespace: kagent
+spec:
+  config:
+    sse:
+      timeout: 5s
+      url: http://localhost:9999/sse
+  description: "git pr MCP server"

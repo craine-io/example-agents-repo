@@ -14,3 +14,11 @@ Join us as we:
 - Integrate with the AWS Labs Terraform MCP server to ensure adherence to infrastructure best practices
 
 Watch the recording here: https://www.youtube.com/watch?v=paqxLLotp3k
+
+## Part 2: Building an IaC Agent
+
+We're back for the second session of the AIRE Framework series! Last time, we built a Terraform AI agent, and this time we're levelling it up! 
+
+In this stream, we'll create an IaC agent that combines the Terraform AI Agent and a GitHub MCP server. This will allow us to take the generated Terraform config and create a PR on GitHub.
+
+Watch the recording here: https://www.youtube.com/watch?v=UUFuL-XRINU
