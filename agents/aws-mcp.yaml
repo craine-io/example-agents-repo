@@ -1,0 +1,11 @@
+apiVersion: kagent.dev/v1alpha1
+kind: ToolServer
+metadata:
+  name: aws-mcp
+  namespace: kagent
+spec:
+  config:
+    sse:
+      timeout: 5s
+      url: http://localhost:8000/sse
+  description: ""
