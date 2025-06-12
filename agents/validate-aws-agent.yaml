@@ -1,0 +1,19 @@
+apiVersion: kagent.dev/v1alpha1
+kind: Agent
+metadata:
+  name: validate-aws
+  namespace: kagent
+spec:
+  description: This agent has access to AWS CLI and knows how to list and retrieve
+    AWS resource information.
+  modelConfig: default-model-config
+  systemMessage: "Use the available tools to check the status for resources in AWS.
+    Respond with all available information and metadata and give user the summary
+    of health and state of resources."
+  tools:
+  - mcpServer:
+      toolNames:
+      - list_ec2_instances
+      - list_vpcs
+      toolServer: aws-mcp
+    type: McpServer

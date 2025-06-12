@@ -22,3 +22,20 @@ We're back for the second session of the AIRE Framework series! Last time, we bu
 In this stream, we'll create an IaC agent that combines the Terraform AI Agent and a GitHub MCP server. This will allow us to take the generated Terraform config and create a PR on GitHub.
 
 Watch the recording here: https://www.youtube.com/watch?v=UUFuL-XRINU
+
+
+## Part 3: Building an AWS Validation Agent
+
+Time to build the last agent in the AIRE series! 
+
+During the past two streams we've built:
+Terraform agent that uses AWS Terraform MCP and generates a Terraform configuration
+Git PR agent that uses Git PR MCP server and can clone repositories, create branches, commits, and PRs.
+
+We also have an overarching AWS IaC agent that delegates work to Terraform and Git PR agents. 
+
+In this last stream of the series, we'll build an AWS Validation Agent. Once a GitHub PR is created and approved, the GitHub Action runs the plan and apply commands to deploy the resources.  
+
+The AWS Validation Agent will check that PR and use an AWS MCP server to check whether the resources were deployed, and give us an overview.
+
+Watch the recording here: https://www.youtube.com/watch?v=iSXqlVc684s
